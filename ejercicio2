@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+plt.figure('Grafica',figsize=(10,10),dpi=100)
+x=np.linspace(-np.pi,np.pi,100,endpoint=True)
+#Años en la universidad-3, Ingreso 2014
+E=3*np.cos(x) + 2014
+plt.plot(x,E,color='#FF4000',linewidth=3,linestyle='o') 
+plt.xlim(-10,10)                                          
+plt.xticks(np.arange(-4,4,1))                          
+plt.xlabel('...')                                      
+plt.ylim(2011,2018)                                     
+plt.yticks(np.arange(2011,2017,1))                      
+plt.ylabel('...')                                      
+ax=plt.gca()
+ax.spines['right'].set_color('blue')
+ax.spines['top'].set_color('green')
+ax.xaxis.set_ticks_position('bottom')
+ax.spines['bottom'].set_position(('data',2014))
+ax.yaxis.set_ticks_position('left')
+ax.spines['left'].set_position(('data',0))
+plt.savefig('Cos.png')
+plt.show()
